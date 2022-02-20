@@ -19,7 +19,8 @@
   },
   "scripts": {
     "start": "craco start",
-    "start:cf": "npx wrangler@beta pages dev --local ./build -- npx craco start",
+    "start:cf": "npx wrangler@beta pages dev ./build --kv HNCR_STORIES -- npx craco start",
+    "start:cfl": "npx wrangler@beta pages dev --local ./build -- npx craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
