@@ -5,17 +5,14 @@ export const useKeyPress = (targetKey: string) => {
   const [keyPressed, setKeyPressed] = useState(false);
   useEffect(() => {
     const downHandler = ({ key }: { key: string }) => {
+      console.log("key down")
       if (key === targetKey) {
-        console.log("key down")
         setKeyPressed(true);
-        setTimeout(() => {
-          setKeyPressed(false);
-        }, 0);
       }
     };
     const upHandler = ({ key }: { key: string }) => {
+      console.log("key up")
       if (key === targetKey) {
-        console.log("key up")
         setKeyPressed(false);
       }
     };
