@@ -8,6 +8,9 @@ export const useKeyPress = (targetKey: string) => {
       if (key === targetKey) {
         console.log("key down")
         setKeyPressed(true);
+        setTimeout(() => {
+          setKeyPressed(false);
+        }, 0);
       }
     };
     const upHandler = ({ key }: { key: string }) => {
