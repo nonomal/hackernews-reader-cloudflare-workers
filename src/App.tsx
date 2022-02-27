@@ -61,13 +61,17 @@ const reducer = (state: State, action: Action): State => {
       if (list.length === 0) {
         return state;
       }
-      if (window.open(list[selectedIndex].url) === null) {
-        console.warn("popup blocked");
-        return {
-          ...state,
-          showPopupBlockedAlert: true
-        };
+      const openAsync = async () => {
+        window.open(list[selectedIndex].url)
       }
+      openAsync()
+      // if (window.open(list[selectedIndex].url) === null) {
+      //   console.warn("popup blocked");
+      //   return {
+      //     ...state,
+      //     showPopupBlockedAlert: true
+      //   };
+      // }
       return state;
     case "followComments":
       if (list.length === 0) {
