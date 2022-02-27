@@ -159,6 +159,9 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    console.log("keyboard use effect event")
+    console.log("downPressed", downPressed)
+    console.log("followPressed", followPressed)
     if (upPressed) {
       dispatch({ type: "navUp" });
     }

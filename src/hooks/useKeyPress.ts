@@ -6,11 +6,13 @@ export const useKeyPress = (targetKey: string) => {
   useEffect(() => {
     const downHandler = ({ key }: { key: string }) => {
       if (key === targetKey) {
+        console.log("key down")
         setKeyPressed(true);
       }
     };
     const upHandler = ({ key }: { key: string }) => {
       if (key === targetKey) {
+        console.log("key up")
         setKeyPressed(false);
       }
     };
